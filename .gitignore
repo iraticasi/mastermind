@@ -1,0 +1,8 @@
+### IntelliJ IDEA ###
+.idea
+.diagrams
+*.iws
+*.iml
+*.ipr
+
+target
