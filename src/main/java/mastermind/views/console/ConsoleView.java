@@ -1,14 +1,18 @@
-package mastermind.views;
+package mastermind.views.console;
 
-import mastermind.controllers.*;
+import mastermind.View;
+import mastermind.controllers.Controller;
+import mastermind.controllers.ContinueController;
+import mastermind.controllers.GuessController;
+import mastermind.controllers.StartController;
 import mastermind.utils.OptionDialog;
 import mastermind.utils.YesNoDialog;
 
-public class View implements ControllerVisitor {
+public class ConsoleView implements View {
 
     private GuessView guessView;
 
-    public View() {
+    public ConsoleView() {
         guessView = new GuessView();
     }
 

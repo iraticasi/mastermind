@@ -40,10 +40,8 @@ public class Pattern {
     public Feedback compareTo(Pattern pattern) {
         assert (pattern != null);
         if (this.equals(pattern)) return new Feedback(4, 0);
+        List<Color>[] colorsLeft = new List[]{new ArrayList<Color>(),new ArrayList<Color>()};
         int blackPegs = 0;
-        List<Color>[] colorsLeft = new List[2];
-        colorsLeft[0] = new ArrayList<Color>();
-        colorsLeft[1] = new ArrayList<Color>();
         for (int i = 0; i < PATTERN_LENGTH; i++) {
             if (this.colors[i].equals(pattern.colors[i])) {
                 blackPegs++;

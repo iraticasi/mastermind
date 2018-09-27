@@ -1,20 +1,22 @@
-package mastermind.controllers;
+package mastermind.controllers.local;
 
+import mastermind.Logic;
+import mastermind.controllers.Controller;
 import mastermind.models.Game;
 
-public class Logic {
+public class LocalLogic implements Logic {
 
     private Game game;
 
-    private StartController startController;
+    private LocalStartController startController;
 
-    private ContinueController continueController;
+    private LocalContinueController continueController;
 
 
-    public Logic() {
+    public LocalLogic() {
         this.game = new Game();
-        this.startController = new StartController(game);
-        this.continueController = new ContinueController(game);
+        this.startController = new LocalStartController(game);
+        this.continueController = new LocalContinueController(game);
 
     }
 

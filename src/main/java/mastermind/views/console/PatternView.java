@@ -1,4 +1,4 @@
-package mastermind.views;
+package mastermind.views.console;
 
 import mastermind.models.Color;
 import mastermind.models.Pattern;
@@ -12,23 +12,16 @@ public class PatternView {
 
     PatternView(Pattern pattern) {
         assert pattern != null;
-
         this.pattern = pattern;
         io = new IO();
     }
 
-    void read() {
+    public void read() {
         String answer;
         boolean ok;
-        String regexp = "";
-        for (int i = 0; i < Color.values().length - 1; i++) {
-            regexp += Color.values()[i].name() + "|";
-        }
-        regexp += Color.values()[Color.values().length - 1].name();
-        regexp = "(" + regexp + "){" + pattern.getPatternLength() + "}";
         do {
             answer = io.readString("Intento: [cuatro letras de entre A-amarillo, R-rojo, V-verde, Z-azul, B-blanco, N-negro] ");
-            ok = answer.matches(regexp);
+            ok = answer.matches(this.generateRegularExpresion());
             if (!ok) {
                 io.writeln("Mal formato'");
             }
@@ -41,12 +34,22 @@ public class PatternView {
         pattern.setColors(colors);
     }
 
-    void write() {
+    private String generateRegularExpresion(){
+        String regexp = "";
+        for (int i = 0; i < Color.values().length - 1; i++) {
+            regexp += Color.values()[i].name() + "|";
+        }
+        regexp += Color.values()[Color.values().length - 1].name();
+        regexp = "(" + regexp + "){" + pattern.getPatternLength() + "}";
+        return regexp;
+    }
+
+    public void write() {
         io.write("Intento: [cuatro letras de entre A-amarillo, R-rojo, V-verde, Z-azul, B-blanco, N-negro] ");
         io.write(this.toString());
     }
 
-    void writeln() {
+    public void writeln() {
         this.write();
         io.writeln();
     }

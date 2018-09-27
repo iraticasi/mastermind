@@ -22,10 +22,12 @@ public class Game {
     }
 
     public void setState(State state) {
+        assert state != null;
         this.state = state;
     }
 
     public Feedback makeAGuess(Pattern guess) {
+        assert guess != null;
         attempts++;
         return secretPattern.compareTo(guess);
     }

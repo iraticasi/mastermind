@@ -1,4 +1,4 @@
-package mastermind.views;
+package mastermind.views.console;
 
 import mastermind.models.Feedback;
 import mastermind.utils.IO;
@@ -14,8 +14,12 @@ public class FeedbackView {
         io = new IO();
     }
 
-    void writeln() {
-        io.writeln(this.toString());
+    public void write(){
+        io.write(this.toString());
+    }
+    public void writeln() {
+        this.write();
+        io.writeln();
     }
 
     @Override

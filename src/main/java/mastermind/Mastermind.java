@@ -1,8 +1,8 @@
 package mastermind;
 
 import mastermind.controllers.Controller;
-import mastermind.controllers.Logic;
-import mastermind.views.View;
+import mastermind.controllers.local.LocalLogic;
+import mastermind.views.console.ConsoleView;
 
 public class Mastermind {
 
@@ -10,9 +10,9 @@ public class Mastermind {
 
     private View view;
 
-    public Mastermind() {
-        this.logic = new Logic();
-        this.view = new View();
+    public Mastermind(Logic logic, View view) {
+        this.logic = logic;
+        this.view = view;
     }
 
     public void play() {
@@ -26,6 +26,6 @@ public class Mastermind {
     }
 
     public static void main(String[] args) {
-        new Mastermind().play();
+        new Mastermind(new LocalLogic(), new ConsoleView()).play();
     }
 }
