@@ -1,5 +1,5 @@
 package mastermind.controllers;
 
-public interface ContinueController extends Controller{
-    public void setContinue(boolean another);
+public interface ContinueController extends Controller {
+    void setContinue(boolean another);
 }

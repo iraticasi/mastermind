@@ -14,9 +14,10 @@ public class FeedbackView {
         io = new IO();
     }
 
-    public void write(){
+    public void write() {
         io.write(this.toString());
     }
+
     public void writeln() {
         this.write();
         io.writeln();
@@ -24,7 +25,8 @@ public class FeedbackView {
 
     @Override
     public String toString() {
-        if (feedback.isAMatch()) return "4 MUERTOS! VICTORIA!";
+        if (feedback.isAMatch())
+            return "4 MUERTOS! VICTORIA!";
         return "" + feedback.getBlackPegs() + " muertos y " + feedback.getWhitePegs() + " heridos";
     }
 }

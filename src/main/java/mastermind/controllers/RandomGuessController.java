@@ -1,6 +1,6 @@
 package mastermind.controllers;
 
-public interface RandomGuessController extends  GuessController{
+public interface RandomGuessController extends GuessController {
 
 
 }

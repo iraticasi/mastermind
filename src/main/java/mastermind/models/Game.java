@@ -2,13 +2,10 @@ package mastermind.models;
 
 public class Game {
 
-    private State state;
-
-    private Pattern secretPattern;
-
-    private int attempts;
-
     private static final int MAX_ATTEMPTS = 10;
+    private State state;
+    private Pattern secretPattern;
+    private int attempts;
 
     public Game() {
         state = State.INITIAL;

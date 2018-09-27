@@ -15,6 +15,10 @@ public class Mastermind {
         this.view = view;
     }
 
+    public static void main(String[] args) {
+        new Mastermind(new LocalLogic(), new ConsoleView()).play();
+    }
+
     public void play() {
         Controller controller;
         do {
@@ -23,9 +27,5 @@ public class Mastermind {
                 view.interact(controller);
             }
         } while (controller != null);
-    }
-
-    public static void main(String[] args) {
-        new Mastermind(new LocalLogic(), new ConsoleView()).play();
     }
 }

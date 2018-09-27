@@ -9,15 +9,14 @@ import java.util.List;
 
 public class Pattern {
 
-    private Color[] colors;
-
     private static final int PATTERN_LENGTH = 4;
+    private Color[] colors;
 
     public Pattern() {
         colors = new Color[PATTERN_LENGTH];
     }
 
-    public int getPatternLength() {
+    public static int getPatternLength() {
         return PATTERN_LENGTH;
     }
 
@@ -40,7 +39,7 @@ public class Pattern {
     public Feedback compareTo(Pattern pattern) {
         assert (pattern != null);
         if (this.equals(pattern)) return new Feedback(4, 0);
-        List<Color>[] colorsLeft = new List[]{new ArrayList<Color>(),new ArrayList<Color>()};
+        List<Color>[] colorsLeft = new List[]{new ArrayList<Color>(), new ArrayList<Color>()};
         int blackPegs = 0;
         for (int i = 0; i < PATTERN_LENGTH; i++) {
             if (this.colors[i].equals(pattern.colors[i])) {

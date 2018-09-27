@@ -1,11 +1,20 @@
 package mastermind.models;
 
 public enum Color {
-    A,
-    R,
-    V,
-    Z,
-    B,
-    N;
+    AMARILLO("A"),
+    ROJO("R"),
+    VERDE("V"),
+    AZUL("Z"),
+    BLANCO("B"),
+    NEGRO("N");
 
+    private final String code;
+
+    Color(String code) {
+        this.code = code;
+    }
+
+    public String getCode() {
+        return code;
+    }
 }

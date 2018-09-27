@@ -10,9 +10,12 @@ public class PatternView {
 
     private IO io;
 
+    private String text;
+
     PatternView(Pattern pattern) {
         assert pattern != null;
         this.pattern = pattern;
+        this.text = "Intento: ["+Pattern.getPatternLength()+" letras de entre" + ColorView.generateOptions()+ "] ";
         io = new IO();
     }
 
@@ -20,8 +23,8 @@ public class PatternView {
         String answer;
         boolean ok;
         do {
-            answer = io.readString("Intento: [cuatro letras de entre A-amarillo, R-rojo, V-verde, Z-azul, B-blanco, N-negro] ");
-            ok = answer.matches(this.generateRegularExpresion());
+            answer = io.readString(text);
+            ok = answer.matches(ColorView.generateRegularExpresion());
             if (!ok) {
                 io.writeln("Mal formato'");
             }
@@ -34,18 +37,9 @@ public class PatternView {
         pattern.setColors(colors);
     }
 
-    private String generateRegularExpresion(){
-        String regexp = "";
-        for (int i = 0; i < Color.values().length - 1; i++) {
-            regexp += Color.values()[i].name() + "|";
-        }
-        regexp += Color.values()[Color.values().length - 1].name();
-        regexp = "(" + regexp + "){" + pattern.getPatternLength() + "}";
-        return regexp;
-    }
 
     public void write() {
-        io.write("Intento: [cuatro letras de entre A-amarillo, R-rojo, V-verde, Z-azul, B-blanco, N-negro] ");
+        io.write(text);
         io.write(this.toString());
     }
 

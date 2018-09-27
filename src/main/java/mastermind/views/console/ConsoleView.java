@@ -1,8 +1,8 @@
 package mastermind.views.console;
 
 import mastermind.View;
-import mastermind.controllers.Controller;
 import mastermind.controllers.ContinueController;
+import mastermind.controllers.Controller;
 import mastermind.controllers.GuessController;
 import mastermind.controllers.StartController;
 import mastermind.utils.OptionDialog;

@@ -15,7 +15,7 @@ public class LocalStartController extends LocalController implements StartContro
 
     public void start(boolean demo) {
         assert this.getState() == State.INITIAL;
-        localGuessController= demo ? new LocalRandomGuessController(game) : new LocalUserGuessController(game);
+        localGuessController = demo ? new LocalRandomGuessController(game) : new LocalUserGuessController(game);
         this.setState(State.IN_GAME);
 
     }
